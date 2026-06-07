@@ -292,7 +292,7 @@ nav ul{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.8;
-  color: #eee8de;
+  color: #d2ccc3;
 }
 
 .internship-benefits{
@@ -306,6 +306,7 @@ nav ul{
 
 .internship-img{
   flex: 1;
+  position: relative;
 }
 
 .internship-img img{
@@ -325,4 +326,20 @@ nav ul{
   color: black;
   letter-spacing: 0;
   width: 200px;
+}
+
+.internship-card{
+  position: absolute;
+  border-radius: 6px;
+  background-color: rgb(200, 169, 106);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  left: 30px;
+  bottom: -30px;
+  width: 170px;
+}
+
+.internship-card p{
+  font-size: 12px;
 }

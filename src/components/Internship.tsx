@@ -18,7 +18,13 @@ function Internship(){
 
             <div className="internship-img">
                 <img src={InternshipImage}/>
+
+                <div className="internship-card">
+                    <h2>12</h2>
+                    <p>Elite Interns Selected <br/> Per Intake</p>
+                </div>
             </div>
+
 
         </section>
     );
