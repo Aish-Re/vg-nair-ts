@@ -8,6 +8,10 @@ nav{
   display : flex;
   justify-content: space-between;
   padding: 15px 80px;
+  position: sticky;
+  top:0;
+  background-color: white;
+  z-index: 1000;
 }
 
 nav h2{
@@ -16,8 +20,13 @@ nav h2{
 
 nav ul{
   display : flex;
-  gap : 30px;
+  gap : 50px;
   list-style: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  color: rgb(97, 88, 88);
+  padding: 5px;
 }
 
 .hero{
@@ -43,6 +52,7 @@ nav ul{
 
 .hero-content h1 span{
   color: rgb(200, 169, 106);
+  text-shadow: 0 0 10px rgba(200, 169, 106, 0.4);
 }
 
 .tagline{
@@ -54,9 +64,9 @@ nav ul{
 }
 
 .description{
-  color: #eee8de;
+  color: #dad5cd;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
   max-width: 500px;
 }
@@ -100,6 +110,10 @@ nav ul{
   padding: 40px;
   min-height: 100px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+}
+
+.card:hover{
+  border-left: 3px solid rgb(200, 169, 106); 
 }
 
 .cards{
@@ -164,7 +178,12 @@ nav ul{
   padding: 40px;
   background-color: white;
   margin-bottom: 10px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px ;
+  transition: 0.3s ease;
+}
+
+.guardiancard:hover{
+  transform: translateY(-5px);
 }
 
 .guardiancard h2{
@@ -234,6 +253,11 @@ nav ul{
   border-radius: 6px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+  transition: 0.3s ease;
+}
+
+.associatecard:hover{
+  transform: translateY(-5px);
 }
 
 .associatecards{
@@ -307,6 +331,7 @@ nav ul{
 .internship-img{
   flex: 1;
   position: relative;
+   transition: 0.5s ease;
 }
 
 .internship-img img{
@@ -315,8 +340,13 @@ nav ul{
   display: block;
 }
 
+.internship-img:hover{
+  transform: scale(1.02);
+}
+
 .internship-apply{
   border-radius: 6px;
+  transition: 0.3s ease;
 }
 
 .internship-apply h3{
@@ -326,6 +356,15 @@ nav ul{
   color: black;
   letter-spacing: 0;
   width: 200px;
+  transition: 0.3s ease;
+}
+
+.internship-apply:hover{
+  background-color: rgb(200, 169, 106);
+}
+
+.internship-apply h3:hover{
+  color: white;
 }
 
 .internship-card{
@@ -338,8 +377,239 @@ nav ul{
   left: 30px;
   bottom: -30px;
   width: 170px;
+  margin-bottom: 10px;
 }
 
 .internship-card p{
   font-size: 12px;
 }
+
+.legacy{
+  background-color: #EDE8E1;
+  padding-bottom: 40px;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-top: 65px;
+  display: flex;
+  gap: 180px;
+
+}
+
+.legacy-left{
+  flex: 1;
+}
+
+.legacy-header{
+  color: black;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.legacy-line{
+  background-color: rgb(200, 169, 106);
+  height: 4px;
+  width: 60px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.legacycard{
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+  max-width: 700px;
+  border-left: 3px solid rgb(200, 169, 106);
+  transition: 0.3s ease;
+}
+
+.legacycard:hover{
+  transform: translateY(-5px);
+}
+
+.legacy-heading{
+  font-weight: bold;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.legacy-description{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: justify;
+  color: rgb(97, 88, 88);
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.legacy-right{
+  flex: 1;
+  margin-right: 30px;
+}
+
+.legacy-quote{
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+  max-width: 600px;
+  color: rgb(97, 88, 88);
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  padding: 30px;
+  font-size: large;
+  line-height: 30px;
+}
+
+.legacy-author{
+  padding-top: 16px;
+}
+
+.legacy-author h4{
+  color: black;
+  font-style: normal;
+}
+.legacy-author p{
+  font-style: normal;
+  font-size: 14px;
+}
+
+.contact{
+  background-color: #f3f0eb;
+  padding: 75px;
+}
+
+.contact-card{
+  display: block;
+  border-radius: 6px;
+  background-color: white;
+  padding: 75px;
+  box-shadow: 0 20px 50px #0003;
+  height: 310px;
+  color: white;
+  background-color: rgb(23, 38, 53);
+  text-align: center;
+}
+
+
+.contact-card h1{
+  color: white;
+  line-height: 1.2;
+  font-size: 50px;
+}
+
+.contact-card p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #d2ccc3;
+  padding: 20px;
+}
+
+.contact-btn{
+  border-radius: 6px;
+  background-color: rgb(200, 169, 106);
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover{
+  background-color: rgb(165, 137, 81);
+}
+
+.contact-btn h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  color: black;
+  letter-spacing: 0;
+  width: 200px;
+
+}
+
+footer{
+  background-color: #e3e1dd;
+  padding: 0px 75px 60px;
+}
+
+.footer-line{
+  background-color: rgb(200, 169, 106);
+  height: 4px;
+  margin-bottom: 32px;
+  margin-left: -75px;
+  margin-right: -75px;
+}
+
+.footer-info{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-bottom: 40px;
+}
+
+.footer-info h3{
+  color: #615858;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+}
+
+.footer-address h3{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color: rgb(41, 38, 38);
+  letter-spacing: 0;
+  padding-bottom: 0;
+}
+
+.footer-info p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5c5242;
+  position: relative;
+}
+
+
+.footer-info p::after{
+  position: absolute;
+  content: "";
+  width: 0%;
+  background-color: rgb(200, 169, 106);
+  height: 1.5px;
+  transition: 0.3s ease;
+  left: 0px;
+  bottom: 0px;
+}
+
+.footer-info p:hover::after{
+  width: 100%;
+  cursor: pointer;
+}
+
+.footer-address p::after{
+  display: none;
+}
+
+.footer-address-line{
+  background-color: rgb(200, 169, 106);
+  height: 1.5px;
+  width: 40px;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+.footer-divider{
+  border-top: 0.5px solid #dbcbb4;
+  padding: 10px;
+}
+
+.footer-rights{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5c5242;
+  display: flex;
+  justify-content: space-between;
+}
+
