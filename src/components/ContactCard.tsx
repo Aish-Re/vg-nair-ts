@@ -1,6 +1,6 @@
-function Contact(){
+function ContactCard(){
     return(
-        <section className="contact">
+        <section className="contact-expert">
             <div className="contact-card">
                 <h1>Secure Your Sovereign Path</h1>
                 <p>Your legal narrative deserves the highest level of scholarship and tactical execution. Speak with our partners today.</p>
@@ -12,4 +12,4 @@ function Contact(){
     );
 }
 
-export default Contact;
+export default ContactCard;

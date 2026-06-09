@@ -23,8 +23,9 @@ function Legacy() {
                 <div className="legacy-line"></div>
 
                 <div className="legacycards">
-                    {legacies.map((legacy) => (
+                    {legacies.map((legacy,index) => (
                         <LegacyCard
+                            key={index}
                             heading = {legacy.heading}
                             description= {legacy.description}
                         />

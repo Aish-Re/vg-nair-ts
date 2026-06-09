@@ -47,8 +47,9 @@ function Domain() {
       </div>
 
       <div className="cards">
-        {domains.map((domain)=> (
+        {domains.map((domain,index)=> (
           <Card
+            key={index}
             title = {domain.title}
             description={domain.description}
             color={domain.color}

@@ -1,7 +1,7 @@
 type CardProps = {
   title : string,
   description : string,
-  color : "blue" | "white"
+  color : string
 };
 
 function Card(props : CardProps) {

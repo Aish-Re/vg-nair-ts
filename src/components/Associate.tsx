@@ -30,8 +30,9 @@ function Associates(){
             </div>
 
             <div className="associatecards">
-                {associates.map((associate) => (
+                {associates.map((associate,index) => (
                     <AssociateCard 
+                        key={index}
                         name = {associate.name}
                         about = {associate.about}
                     />

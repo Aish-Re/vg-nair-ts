@@ -23,8 +23,9 @@ function Guardians() {
       </div>
 
       <div className="guardiancards">
-        {guardians.map((guardian)=> (
+        {guardians.map((guardian,index)=> (
           <GuardianCard 
+            key={index}
             name = {guardian.name}
             position = {guardian.position}
             about = {guardian.about} 
