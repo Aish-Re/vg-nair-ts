@@ -1,7 +1,8 @@
 import AboutHero from "../components/AboutHero";
 import AboutLegacy from "../components/AboutLegacy";
 import Foundation from "../components/Foundation";
-import AboutLeadership from "../components/AboutLeadership";
+import Leadership from "../components/Leadership";
+import Stats from "../components/Stats";
 
 function About() {
     return (
@@ -9,7 +10,8 @@ function About() {
         <AboutHero />
         <AboutLegacy />
         <Foundation />
-        <AboutLeadership />
+        <Leadership />
+        <Stats />
       </>
     );
 }
