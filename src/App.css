@@ -783,3 +783,8 @@ footer{
 .leadershipcard:nth-child(even){
   margin-top: 40px;
 }
+
+.stats{
+  background-color: #efe9de;
+  display: flex;
+}

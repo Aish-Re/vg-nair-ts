@@ -6,7 +6,7 @@ type StatsCardProps = {
 
 function StatsCard(props : StatsCardProps) {
     return (
-        <div className= {`statscard ${props.color}`}>
+        <div className={`stat ${props.color}`}>
             <h1>{props.number}</h1>
             <p>{props.about}</p>
         </div>

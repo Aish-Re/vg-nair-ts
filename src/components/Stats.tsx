@@ -30,7 +30,14 @@ function Stats() {
     return(
         <section className="stats">
             <div className="statscards">
-
+                {stats.map((stat,index) => (
+                    <StatsCard
+                        key={index}
+                        number={stat.number}
+                        about={stat.about}
+                        color={stat.color}
+                    />
+                ))}
             </div>
         </section>
     );
