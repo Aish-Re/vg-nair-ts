@@ -4,25 +4,25 @@ const  stats = [
     {
         number : "1500+",
         about : "Cases Handled",
-        color : ""
+        color : "blue"
     },
 
     {
         number : "25+",
         about : "Years Experience",
-        color : ""
+        color : "white"
     },
 
     {
         number : "98%",
         about : "Success Rate",
-        color : ""
+        color : "blue"
     },
 
     {
         number : "3",
         about : "Office Locations",
-        color : ""
+        color : "white"
     }
 ]
 
