@@ -908,22 +908,15 @@ footer{
   letter-spacing: 2px;
 }
 
-.contact-address{
-  flex: 1;
-  padding: 0px;
-}
-
-.contact-content p{
-  line-height: 1.7;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 90%;
-}
-
 .contact-form p{
   color: rgb(97, 88, 88);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  line-height: 1.7;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  
 }
 
 .contact-form input,
@@ -947,7 +940,6 @@ footer{
   outline: none;
 }
 
-
 .submit{
   background-color: #091624;
   color: white;
@@ -961,22 +953,96 @@ footer{
 }
 
 .submit:hover{
-  opacity: 90%;
+  opacity: 80%;
 }
 
+.contact-address{
+  flex: 1;
+  padding: 0px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  width: 90%;
+}
 
-.contact-address-tagline {
+.contact-address h2,
+.contact-address-description{
+  margin-bottom: 20px;
+}
+
+.contact-address-header {
   margin: 0px;
   color: rgb(200, 169, 106);
   font-family: 'Franklin Gothic', 'Arial', Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: 2px;
   padding: 0px;
 }
 
-.contact-address-head,
+.contact-office-address,
 .contact-address-description{
   color: rgb(97, 88, 88);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
+
+.contact-office-phone{
+    color: rgb(97, 88, 88);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-office-address{
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+
+.map-display{
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  height: 350px;
+}
+
+.mapname-display{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  
+}
+
+.prev-button,
+.next-button{
+  background-color: #091624;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  width: 60px;
+  gap: 30px;
+}
+
+.prev-button:hover{
+  opacity: 80%;
+}
+
+.prev-button{
+  background-color: #091624;
+  color: white;
+}
+
+.next-button{
+  background-color: rgb(200, 169, 106);
+  color: black;
+  border: none;
+}
+
+.next-button:hover{
+  opacity: 80%;
+}
+
