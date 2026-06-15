@@ -42,8 +42,62 @@ const maps = [
     }
 ]
 
+interface ContactFormData{
+    fullName : string;
+    email : string;
+    inquiry : string;
+    message : string
+}
+
 function ContactMain(){
     const [selectedMap, setSelectedMap] = useState(2);
+
+    const [formData, setFormData] = useState<ContactFormData> ({
+        fullName : "",
+        email : "",
+        inquiry : "",
+        message : ""
+    })
+    
+    const [isSubmitted, setISubmitted] = useState(false);
+
+    function handleSubmit(e : React.SubmitEvent) {
+        e.preventDefault();
+        if (formData.fullName.trim() === "" ) {
+            alert("Enter the full name")
+            return
+        }
+
+        if (formData.email.trim() === "") {
+            alert("Enter the email")
+            return
+        }
+        
+        if (formData.inquiry === "") {
+            alert("Select your inquiry type")
+            return
+        }
+
+        if (formData.message.trim() === "") {
+            alert("Enter your inquiry message")
+            return
+        }
+
+        console.log(formData);
+
+        setISubmitted(true);
+
+
+    }
+
+    function handleChange(e:React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement | HTMLSelectElement>){
+        setFormData({...formData, [e.target.name] : e.target.value});
+    }
+
+    function handleFieldCick() {
+        setISubmitted(false);
+    }
+
 
     return(
         <section className="contact-content">
@@ -51,29 +105,53 @@ function ContactMain(){
                 <h2>Request a Private Consultation</h2>
                 <p>Your narrative deserves the utmost discretion and expert attention. Detail your requirements below; our partners will review your file personally.</p>
 
-                <form>
+                <form onSubmit= {handleSubmit}>
                     <label>FULL NAME</label>
                     <input type="text"
+                           name="fullName"
                            placeholder="Enter your name"
+                           value={formData.fullName}
+                           onChange={handleChange}
+                           onClick={handleFieldCick}
                     />
 
                     <label>PROFESSIONAL EMAIL</label>
                     <input type="email"
+                           name="email"
                            placeholder="Enter your email"
+                           value={formData.email}
+                           onChange={handleChange}
+                           onClick={handleFieldCick}
                     />
 
                     <label>AREA OF INQUIRY</label>
-                    <select>
-                        <option>Select Inquiry</option>
+                    <select 
+                            name="inquiry"
+                            value={formData.inquiry}
+                            onChange={handleChange}
+                            onClick={handleFieldCick}
+                    >
+                        <option value="">Select Inquiry</option>
                         <option>Corporate Law</option>
                         <option>Family Law</option>
                         <option>Property Law</option>
                     </select>
 
                     <label>STRATEGIC MESSAGE</label>
-                    <textarea placeholder="Briefly describe the legal landscape"></textarea>
+                    <textarea placeholder="Briefly describe the legal landscape"
+                              name="message"
+                              value={formData.message}
+                              onChange={handleChange}
+                              onClick={handleFieldCick}
+                    ></textarea>
 
-                    <button className="submit">Submit Inquiry →</button>
+                    <button className="submit">Submit Inquiry → </button>
+                    
+                    {isSubmitted && (
+                        <p>Your inquiry has been submitted successfully.</p>
+                    )}
+
+
 
                 </form>
             </div>
@@ -99,10 +177,10 @@ function ContactMain(){
                 <iframe className="map-display" src={maps[selectedMap].mapLink} />
                 <div className="mapname-display">
                     <button className="prev-button" 
-                        onClick={() => setSelectedMap(selectedMap==0 ? maps.length - 1 : selectedMap-1)}>Prev</button>
+                        onClick={() => setSelectedMap(selectedMap===0 ? maps.length - 1 : selectedMap-1)}>Prev</button>
                     {maps[selectedMap].location}
                     <button className="next-button" 
-                        onClick={() => setSelectedMap(selectedMap == maps.length-1 ? 0 : selectedMap+1)}>Next</button>
+                        onClick={() => setSelectedMap(selectedMap === maps.length-1 ? 0 : selectedMap+1)}>Next</button>
                 </div>
 
             </div>
