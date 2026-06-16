@@ -49,6 +49,13 @@ interface ContactFormData{
     message : string
 }
 
+interface FormErrors{
+    fullName : string;
+    email : string;
+    inquiry : string;
+    message : string
+}
+
 function ContactMain(){
     const [selectedMap, setSelectedMap] = useState(2);
 
@@ -59,27 +66,45 @@ function ContactMain(){
         message : ""
     })
     
+    const [errors, setErrors] = useState<FormErrors> ({
+        fullName : "",
+        email : "",
+        inquiry : "",
+        message : ""
+    })
+
+
     const [isSubmitted, setISubmitted] = useState(false);
 
     function handleSubmit(e : React.SubmitEvent) {
         e.preventDefault();
+
+        const newErrors : FormErrors = {
+            fullName : "",
+            email : "",
+            inquiry : "",
+            message : ""           
+        }
+
         if (formData.fullName.trim() === "" ) {
-            alert("Enter the full name")
-            return
+            newErrors.fullName ="This field cannot be empty";
         }
 
         if (formData.email.trim() === "") {
-            alert("Enter the email")
-            return
+            newErrors.email = "This field cannot be empty";
         }
         
         if (formData.inquiry === "") {
-            alert("Select your inquiry type")
-            return
+            newErrors.inquiry="This field cannot be empty";
         }
 
         if (formData.message.trim() === "") {
-            alert("Enter your inquiry message")
+            newErrors.message="This field cannot be empty";
+        }
+
+        setErrors(newErrors);
+
+        if (newErrors.fullName || newErrors.email || newErrors.inquiry || newErrors.message) {
             return
         }
 
@@ -87,11 +112,18 @@ function ContactMain(){
 
         setISubmitted(true);
 
+        setFormData({
+            fullName: "",
+            email : "",
+            inquiry : "",
+            message : ""
+        });
 
     }
 
     function handleChange(e:React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement | HTMLSelectElement>){
         setFormData({...formData, [e.target.name] : e.target.value});
+        setErrors({...errors, [e.target.name] : ""})
     }
 
     function handleFieldCick() {
@@ -114,6 +146,7 @@ function ContactMain(){
                            onChange={handleChange}
                            onClick={handleFieldCick}
                     />
+                    <p className="error-message">{errors.fullName}</p>
 
                     <label>PROFESSIONAL EMAIL</label>
                     <input type="email"
@@ -123,6 +156,7 @@ function ContactMain(){
                            onChange={handleChange}
                            onClick={handleFieldCick}
                     />
+                    <p className="error-message">{errors.email}</p>
 
                     <label>AREA OF INQUIRY</label>
                     <select 
@@ -136,6 +170,7 @@ function ContactMain(){
                         <option>Family Law</option>
                         <option>Property Law</option>
                     </select>
+                    <p className="error-message">{errors.inquiry}</p>
 
                     <label>STRATEGIC MESSAGE</label>
                     <textarea placeholder="Briefly describe the legal landscape"
@@ -144,11 +179,12 @@ function ContactMain(){
                               onChange={handleChange}
                               onClick={handleFieldCick}
                     ></textarea>
+                    <p className="error-message">{errors.message}</p>
 
                     <button className="submit">Submit Inquiry → </button>
                     
                     {isSubmitted && (
-                        <p>Your inquiry has been submitted successfully.</p>
+                        <p className="success-message" >Your inquiry has been submitted successfully.</p>
                     )}
 
 
