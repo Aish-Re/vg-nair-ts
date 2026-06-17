@@ -1054,3 +1054,11 @@ footer{
 .contact-form .success-message{
   color : #2e7d32;
 }
+
+@media (max-width : 768px) {
+
+  nav{
+    padding: 15px 20px;
+  }
+
+}
