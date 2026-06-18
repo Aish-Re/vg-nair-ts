@@ -1162,7 +1162,7 @@ footer{
   }
 
   .position{
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .about{
@@ -1180,6 +1180,41 @@ footer{
   .internship-img{
     display: none;
   }
+
+  .internship{
+    padding: 20px;
+  }
+
+  .internship-content h1{
+    font-size: 30px;
+  }
+
+  .internship-content h3{
+    font-size: 13px;
+  }
+
+  .internship-benefits{
+    font-size: 14px;
+  }
+
+  .legacy{
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .legacy-header{
+    font-size: 15px;
+  }
+
+  .legacy-description{
+    font-size: 13px;
+  }
+
+  .legacy-quote{
+    font-size: 14px;
+    line-height: 25px;
+  }
+
 }
 
 
