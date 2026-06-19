@@ -387,7 +387,7 @@ nav h2{
   padding: 10px;
   color: black;
   letter-spacing: 0;
-  width: 200px;
+  width: fit-content;
   transition: 0.3s ease;
 }
 
@@ -555,7 +555,7 @@ nav h2{
   padding: 10px;
   color: black;
   letter-spacing: 0;
-  width: 200px;
+  width: fit-content;
 
 }
 
@@ -951,7 +951,7 @@ footer{
   font-size: 15px;
   padding: 10px;
   border-radius: 6px;
-  width: 180px;
+  width: fit-content;
   margin-top: 20px;
 }
 
@@ -1094,9 +1094,12 @@ footer{
     padding: 10px;
   }
 
-  .hero{
-    background-size: cover;
-    background-position: right;
+  .hero,
+  .about-hero,
+  .contact-hero{
+    background-position: right center;
+    min-height: 70vh;
+    height: auto;
   }
 
   .hero-content{
@@ -1202,6 +1205,7 @@ footer{
   .internship-benefits{
     font-size: 14px;
   }
+
 
   .legacy{
     padding: 20px;
@@ -1321,7 +1325,7 @@ footer{
 
   .leadershipcards{
     grid-template-columns: 1fr 1fr;
-    gap: 0px;
+    gap: 20px;
   }
 
   .leadershipcard{
@@ -1330,6 +1334,18 @@ footer{
 
   .leadership-line{
     margin-bottom: 20px;
+  }
+
+  .leadershipcard:nth-child(even){
+    margin: 0px;
+  }
+
+  .leadershipcard h2{
+    font-size: 20px;
+  }
+
+  .leadershipcard p{
+    font-size: 13px;
   }
 
   .stats{
