@@ -1,73 +1,119 @@
-# React + TypeScript + Vite
+# ⚖️ VG Nair & Associates Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive law firm website built using **React** and **TypeScript**. The project showcases the firm's services, legacy, leadership team, and contact information while providing a fully functional inquiry form with email integration.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://vg-nair-ts.vercel.app/
 
-## React Compiler
+## 📂 GitHub Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://github.com/Aish-Re/vg-nair-ts
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Multi-page navigation using React Router
+- Fully responsive design for desktop, tablet, and mobile devices
+- Professional law firm landing page
+- About page showcasing firm legacy and leadership
+- Contact page with form validation
+- Email integration using Web3Forms API
+- Loading states and error handling
+- Interactive office location maps
+- Mobile navigation menu
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Technologies Used
+
+- React
+- TypeScript
+- React Router DOM
+- CSS3
+- Vite
+- Web3Forms API
+- Git & GitHub
+- Vercel
+
+---
+
+## 📁 Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+├── pages/
+├── App.tsx
+├── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📚 What I Learned
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Through this project, I gained hands-on experience with:
+
+- React component architecture
+- State management using `useState`
+- Form validation and controlled components
+- API integration using `fetch()`
+- Async/Await and error handling
+- Responsive web design
+- Deployment using Vercel
+- Version control with Git and GitHub
+
+---
+
+## 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Aish-Re/vg-nair-ts.git
 ```
+
+Navigate to the project directory:
+
+```bash
+cd vg-nair-ts
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🔮 Future Improvements
+
+- Backend integration for inquiry management
+- Database support for storing submissions
+- Admin dashboard for managing inquiries
+- Improved accessibility
+- Enhanced UI animations
+
+---
+
+## 👩‍💻 Author
+
+**Aiswarya Rethitta**
+
+Computer Science Engineering Student  
+React & TypeScript Learner
