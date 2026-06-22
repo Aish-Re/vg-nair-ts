@@ -956,7 +956,12 @@ footer{
 }
 
 .submit:hover{
-  opacity: 80%;
+  opacity: 90%;
+}
+
+.submit:disabled{
+  opacity: 60%;
+  cursor: not-allowed;
 }
 
 .contact-address{
@@ -1054,7 +1059,8 @@ footer{
   margin:2px;
 }
 
-.contact-form .success-message{
+.contact-form .success-message,
+.contact-form .loading{
   color : #2e7d32;
 }
 

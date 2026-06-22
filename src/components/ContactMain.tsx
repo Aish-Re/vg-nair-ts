@@ -76,7 +76,11 @@ function ContactMain(){
 
     const [isSubmitted, setISubmitted] = useState(false);
 
-    function handleSubmit(e : React.SubmitEvent) {
+    const [loading, setLoading] = useState(false);
+
+    const ACCESS_KEY = "d713325a-868e-43de-a6db-b3bbb4206ffc";
+
+    async function handleSubmit(e : React.SubmitEvent) {
         e.preventDefault();
 
         const newErrors : FormErrors = {
@@ -108,17 +112,50 @@ function ContactMain(){
             return
         }
 
-        console.log(formData);
+        setLoading(true);
 
-        setISubmitted(true);
+        const reference_id = `VG - ${crypto.randomUUID()}`;
 
-        setFormData({
-            fullName: "",
-            email : "",
-            inquiry : "",
-            message : ""
-        });
+        const data = {
+            access_key : ACCESS_KEY,
+            subject : `New Inquiry [${reference_id}]`,
+            fullName : formData.fullName,
+            email : formData.email,
+            inquiry : formData.inquiry,
+            message : formData.message
+        }
 
+        try{
+            const response = await fetch("https://api.web3forms.com/submit",{
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify(data)
+            })
+
+            const result = await response.json()
+
+
+            if (result.success) {
+                setISubmitted(true);
+
+                setFormData({
+                fullName: "",
+                email : "",
+                inquiry : "",
+                message : ""
+            });
+            } else {
+                alert("Failed to send inquiry");
+            }
+        }
+        catch{
+            alert("Something went wrong. Try Again.")
+        }
+        finally{
+            setLoading(false);
+        }
     }
 
     function handleChange(e:React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement | HTMLSelectElement>){
@@ -181,11 +218,17 @@ function ContactMain(){
                     ></textarea>
                     <p className="error-message">{errors.message}</p>
 
-                    <button className="submit">Submit Inquiry → </button>
+                    <button className="submit" disabled={loading}>Submit Inquiry → </button>
+
+                    {loading && (
+                        <p className="loading"> Sending... </p>
+                    )}
                     
                     {isSubmitted && (
                         <p className="success-message" >Your inquiry has been submitted successfully.</p>
                     )}
+
+                    
 
 
 
